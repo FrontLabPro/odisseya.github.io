@@ -1,4 +1,4 @@
-if(document.location.protocol!="http:"){document.location=document.URL.replace(/^http:/i,"http:");};
+//if(document.location.protocol!="http:"){document.location=document.URL.replace(/^http:/i,"http:");};
 var deferInlineJQuery=function(){jQuery(document).ready(function(){wpestate_contact_us_shortcode();});};if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",deferInlineJQuery);}else{deferInlineJQuery();};
 try{var sbmt=document.getElementById('submit'),npt=document.createElement('input'),d=new Date(),__ksinit=function(){sbmt.parentNode.insertBefore(npt,sbmt);};npt.value=d.getUTCDate()+''+(d.getUTCMonth()+1)+'uniq9065';npt.name='ksbn_code';npt.type='hidden';sbmt.onmousedown=__ksinit;sbmt.onkeypress=__ksinit;}catch(e){};
 /*!

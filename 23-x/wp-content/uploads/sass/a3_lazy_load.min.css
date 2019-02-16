@@ -1,0 +1,36 @@
+.clear{clear:both}.nobr{white-space:nowrap}.lazy-hidden,.entry img.lazy-hidden,img.thumbnail.lazy-hidden{background-color:#fff}<body>
+<h1>Requested Range Not Satisfiable</h1>
+<p>None of the range-specifier values in the Range
+request-header field overlap the current extent
+of the selected resource.</p>
+<hr>
+<address>Apache/2.4.25 (Debian) Server at 23-x.ru Port 443</address>
+</body></html>
+
+0
+
+HTTP/1.1 416 Requested Range Not Satisfiable
+Date: Sat, 16 Feb 2019 11:47:47 GMT
+Server: Apache/2.4.25 (Debian)
+Strict-Transport-Security: max-age=31536000; preload
+Strict-Transport-Security: max-age=31536000; preload
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=iso-8859-1
+
+184
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>416 Requested Range Not Satisfiable</title>
+</head><body>
+<h1>Requested Range Not Satisfiable</h1>
+<p>None of the range-specifier values in the Range
+request-header field overlap the current extent
+of the selected resource.</p>
+<hr>
+<address>Apache/2.4.25 (Debian) Server at 23-x.ru Port 443</address>
+</body></html>
+
+0
+

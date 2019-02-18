@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" client="site" type="template" method="upgrade">
+  <name>moz21</name>
+  <creationDate>2018-12-08</creationDate>
+  <version>1.0</version>
+  <author/>
+  <authorUrl/>
+  <description/>
+  <files>
+    <folder>app</folder>
+    <folder>css</folder>
+    <folder>data</folder>
+    <folder>editor</folder>
+    <folder>fields</folder>
+    <folder>html</folder>
+    <folder>images</folder>
+    <folder>includes</folder>
+    <folder>js</folder>
+    <folder>language</folder>
+    <folder>library</folder>
+    <folder>plugins</folder>
+    <folder>prototypes</folder>
+    <folder>templates</folder>
+    <file>Readme.txt</file>
+    <file>bootstrap.min.js</file>
+    <file>component.php</file>
+    <file>error.php</file>
+    <file>functions-additional.php</file>
+    <file>functions.php</file>
+    <file>index.html</file>
+    <file>index.php</file>
+    <file>jquery.js</file>
+    <file>layout.core.js</file>
+    <file>layout.ie.css</file>
+    <file>layout.ie.js</file>
+    <file>modrender.php</file>
+    <file>script.js</file>
+    <file>style.ie.css</file>
+    <file>templateDetails.xml</file>
+    <file>template_preview.png</file>
+    <file>template_thumbnail.png</file>
+    <file>virtuemart.js</file>
+  </files>
+  <positions>
+    <position>breadcrumb</position>
+    <position>hmenu</position>
+    <position>left</position>
+    <position>position-12</position>
+    <position>position-14</position>
+    <position>position-4</position>
+    <position>position-5</position>
+    <position>position-6</position>
+    <position>position-8</position>
+  </positions>
+  <config>
+    <fields name="params" addfieldpath="/templates/moz21/fields">
+      <fieldset name="basic">
+        <field name="siteTitle" default="Headline" type="text" size="50" label="TPL_SITE_TITLE" description="TPL_SITE_TITLE_DESCRIPTION"/>
+        <field name="siteSlogan" default="Slogan" type="text" size="50" label="TPL_SITE_SLOGAN" description="TPL_SITE_SLOGAN_DESCRIPTION"/>
+        <field name="logoFile" default="" type="media" label="TPL_LOGO_LABEL" description="TPL_LOGO_DESC"/>
+        <field name="logoLink" default="" type="text" label="TPL_LOGOLINK_LABEL" description="TPL_LOGOLINK_DESC"/>
+        <field type="spacer" name="spacer" hr="true"/>
+        <field name="editor" type="designer" label="TPL_EDITOR_LABEL" description="TPL_EDITOR_DESCRIPTION" text="TPL_EDITOR"/>
+        <field name="notePlugin" type="note" label="TPL_PLUGINS_NOTE" class="alert"/>
+        <field name="plugins" type="plugins" label="TPL_PLUGINS_LABEL" text="TPL_INSTALL_PLUGINS" description="TPL_PLUGIN_DESCRIPTION"/>
+        <field type="spacer" name="spacer2" hr="true"/>
+        <field name="content" type="import" label="TPL_IMPORTCONTENT" description="TPL_IMPORTCONTENT_DESCRIPTION" text="TPL_IMPORTCONTENT_TEXT"/>
+        <field type="hidden" name="contentImported" default="0"/>
+      </fieldset>
+      <fieldset name="templates">
+        <field type="templates" name="home" kind="home" default="" label="TPL_HOME_TEMPLATE"/>
+        <field type="templates" name="blog" kind="blog" default="" label="TPL_BLOG_TEMPLATE"/>
+        <field type="text" name="sample_blog" kind="blog" default="" label="TPL_BLOG_TEMPLATE_URL"/>
+        <field type="templates" name="post" kind="post" default="" label="TPL_POST_TEMPLATE"/>
+        <field type="templates" name="page" kind="page" default="" label="TPL_PAGE_TEMPLATE"/>
+        <field type="templates" name="products" kind="products" default="" label="TPL_PRODUCTS_TEMPLATE"/>
+        <field type="templates" name="productoverview" kind="productoverview" default="" label="TPL_PRODUCTOVERVIEW_TEMPLATE"/>
+        <field type="templates" name="shoppingcart" kind="shoppingcart" default="" label="TPL_SHOPPINGCART_TEMPLATE"/>
+        <field type="templates" name="default" kind="default" default="" label="TPL_DEFAULT_TEMPLATE"/>
+        <field type="templates" name="error404" kind="error404" default="" label="TPL_TEMPLATE404_TEMPLATE"/>
+        <field type="hidden" name="sampleData" default=""/>
+      </fieldset>
+      <fieldset name="menus">
+        <field name="menus" default="" type="menus" label="TPL_MENUITEMSLIST_LABEL" description="TPL_MENUSLIST_DESC"/>
+        <field name="megamenu" type="list" default="1" label="TPL_MEGAMENU_LABEL" description="TPL_MEGAMENU_DESC">
+          <option value="1">Enable</option>
+          <option value="0">Disable</option>
+        </field>
+        <field name="modemenu" type="list" default="" label="TPL_MODEMENU_LABEL" description="TPL_MODEMENU_DESC">
+          <option value="">Default</option>
+          <option value="sheet">Sheet</option>
+          <option value="custom">Custom (px)</option>
+        </field>
+        <field name="customvalue" type="text" default="400" label="TPL_CUSTOMVALUE_LABEL" description="TPL_CUSTOMVALUE_DESC" filter="integer"/>
+        <field name="megadesktops" type="list" default="" label="TPL_DESKTOPS_WIDTH" description="TPL_DESKTOPS_WIDTH_DESCRIPTION">
+          <option value=""/>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="12">12</option>
+        </field>
+        <field name="megalaptops" type="list" default="" label="TPL_LAPTOPS_WIDTH" description="TPL_LAPTOPS_WIDTH_DESCRIPTION">
+          <option value=""/>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="12">12</option>
+        </field>
+        <field name="megatablets" type="list" default="" label="TPL_TABLETS_WIDTH" description="TPL_TABLETS_WIDTH_DESCRIPTION">
+          <option value=""/>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="12">12</option>
+        </field>
+        <field name="megaphones" type="list" default="" label="TPL_PHONES_WIDTH" description="TPL_PHONES_WIDTH_DESCRIPTION">
+          <option value=""/>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="12">12</option>
+        </field>
+        <field name="menusOptions" type="hidden" default=""/>
+      </fieldset>
+    </fields>
+  </config>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.tpl_moz21.ini</language>
+  </languages>
+</extension>

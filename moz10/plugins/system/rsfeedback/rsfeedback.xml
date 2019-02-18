@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="system" method="upgrade">
+	<name>System - RSFeedback!</name>
+	<author>RSJoomla</author>
+	<creationDate>2010</creationDate>
+	<copyright>Copyright (C) 2010 www.rsjoomla.com</copyright>
+	<license>GPL, http://www.gnu.org/copyleft/gpl.html</license>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Auto moderation parser</description>
+	
+	<files>
+			<filename plugin="rsfeedback">rsfeedback.php</filename>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_rsfeedback.ini</language> 
+	</languages>
+	
+	<params>
+		<param name="Itemid" type="text" default="" label="Itemid" description="Set the Itemid" />
+	</params>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="Itemid" type="text" default="" label="Itemid" description="Set the Itemid" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

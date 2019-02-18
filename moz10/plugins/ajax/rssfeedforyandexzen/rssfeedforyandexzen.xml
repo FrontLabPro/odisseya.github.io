@@ -1,0 +1,2327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5"
+           type="plugin"
+           group="ajax"
+           method="upgrade">
+    <name>Ajax - Rss лента для Яндекс.Дзена и Турбо страниц</name>
+    <version>2.1</version>
+    <creationDate>Nov 01, 2017</creationDate>
+    <author>Eugene Kopylov</author>
+    <authorEmail>cb9toiiia@gmail.com</authorEmail>
+    <authorUrl>https://seosm.ru</authorUrl>
+    <license>JTurbo License - https://jturbo.ru/license.php</license>
+    <copyright>Copyright (C) 2017. All rights reserved.</copyright>
+    <description>
+        <![CDATA[Ajax - Расширение Joomla! для турбо-страниц и Яндекс Дзен. <br><b>Для настройки и добавление новых возможностей (мои контакты): Сайт: <a target="_blank" href="https://seosm.ru/">www.SEOSM.ru</a> Skype: cb9t.ru / Telegram: <a href="https://t.me/cb9toiiia" target="_blank">@CB9TOIIIA</a> / Почта: cb9toiiia@gmail.com </b><br><iframe frameborder='0' allowtransparency='true' scrolling='no' src='https://tpv.sr/1QoBz28/' width='750' height='180'></iframe>]]>
+    </description>
+    <files>
+        <filename plugin="rssfeedforyandexzen">rssfeedforyandexzen.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    type="text"
+                    name="zenfeed_lickey"
+					default=""
+                    label="Лицензионный ключ (персональная лицензия)"
+                    description="Лицензия"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_who"
+                    label="Работа с каким компонентом?"
+                    description="Необходимо выбрать компонент из которого будут импортироваться статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">Стандартные</option>
+                    <option value="1">JBZoo</option>
+                    <option value="2">K2</option>
+                    <option value="3">JBZoo (all types)</option>
+                    <option value="4">JoomShopping 4</option>
+                    <option value="5">Virtuemart 3</option>
+                    <option value="6">YOOtheme Pro</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_xmlfeed"
+                    label="Принудительно задать ленте xml формат?"
+                    description="Добавляет в head страницы - отображение в виде xml фида."
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_error_off"
+                    label="Принудительно скрыть php ошибки?"
+                    description="Скрывает оповещение ошибок php."
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_global_youtube"
+                    label="Преобразовать ссылки на Youtube в ролик?"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_global_squarebrackets"
+                    label="Очищать BB коды? квадратные скобки"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_global_classes"
+                    label="Очищать по RegExp (по классам или id)"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_global_classes_textarea"
+                    label="Правила очистки RegExp (с новой строки)"
+                    filter="safehtml"
+                    default="" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_images_path"
+                    label="Принудительно задавать папке images слеш?"
+                    description="Добавляет слеш - чтобы путь к фото брался от корня сайта"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_img_domain"
+                    label="Принудительно задавать изображениям домен?"
+                    description="Делает из относительных ссылок - абсолютные (изображения)."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="spacer"
+                    name="myspace8951"
+                    class="text"
+             label="&lt;style&gt;#jform_params_zenfeed_who label {width: 110px;}&lt;/style&gt; &lt;b&gt; Сгенерировать ссылку на RSS ленту для Яндекс.Турбо и Яндекс.Дзен - &lt;a target=&#39;_blank&#39; href=&quot;https://turbozen.seosm.ru/geturl.php&quot;&gt;сайт генератор&lt;/a&gt; &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_site_pwdturbo"
+					default=""
+                    label="Кодовое слово для турбо-страниц"
+                    description="Кодовое слово - это переменная, которая необходима для создания уникальной ссылки"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_pwd_zen"
+					default=""
+                    label="Кодовое слово для ленты Дзена"
+                    description="Кодовое слово - это переменная, которая необходима для создания уникальной ссылки"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_turbo_li"
+                    label="LiveInternet есть на сайте?"
+                    description="Учитывает статистику в LiveInternet"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_yaid"
+					default=""
+                    label="ID Яндекс.Метрики"
+                    description="Учитывает статистику в Яндекс.Метрики"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_googleid"
+					default=""
+                    label="ID Google analitycs"
+                    description="Учитывает статистику в Google analitycs"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_ya_rsya"
+					default=""
+                    label="ID Я.Директ площадки 1"
+                    description="Реклама в Яндексе (вначале)"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_ya_rsya2"
+					default=""
+                    label="ID Я.Директ площадки 2"
+                    description="Реклама в Яндексе (середина)"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_ya_rsya3"
+					default=""
+                    label="ID Я.Директ площадки 3"
+                    description="Реклама в Яндексе (конец)"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_ad_fox"
+					default=""
+                    label="ADFOX ownerId"
+                    description="Реклама в сервисе AdFox ID клиента OwnerId"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_turbo_ad_fox_container"
+					default=""
+                    label="ADFOX containerId"
+                    description="Реклама в сервисе AdFox - имя дива, блока"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_cache"
+                    label="Использовать кеш?"
+                    description="Используется системный кеш Joomla, даже если выключен"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cache_time"
+                    default="5"
+                    label="Время кеша (минуты)"
+                    description="Время хранения в кеше Joomla (минуты)"></field>
+                <field
+                    type="spacer"
+                    name="myspace3"
+                    class="text"
+             label="&lt;b&gt; Разрешеные категории Яндекс.Дзен: &lt;/b&gt; Авто, Война, Дизайн, Дом, Еда, Здоровье, Знаменитости, Игры, Кино, Культура, Литература, Мода, Музыка, Наука, Общество, Политика, Природа, Происшествия, Психология, Путешествия, Спорт, Технологии, Фотографии, Хобби, Экономика, Юмор "/>
+                <field
+                    type="radio"
+                    name="zenfeed_cat_replace"
+                    label="Если категории не совпадает - заменять?"
+                    description="Замена всех категорий, если они не совпадают"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_cat_replace_jbzoo"
+                    label="Что использовать для вывода категорий?"
+                    description="Откуда брать текстовую информацию для замены категорий"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">Поле ниже</option>
+                    <option value="1">ELEMENT JBZoo</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_catname"
+					default="Политика, Общество, Происшествия"
+                    label="Название категорий для замены (через запятую)"
+                    description="На эти категории будет происходить замена."></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_rss_limit"
+					default="10"
+                    label="Ограничение ленты (новостей)"
+                    description="Ограничение ленты - внимание большое число, может привести к ошибке или очень длительному запросу. Рекомендуемый параметр от 10 или 20 статей."></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_db_limit"
+					default="10"
+                    label="Ограничение в запросе LIMIT к БД"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_db_random"
+					default="100"
+                    label="Ограничение в запросе для случайной ленты"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_sitename"
+                    label="Имя сайта для Дзена"
+                    description="Имя ленты для Яндекс.Дзен"></field>
+                <field
+                    type="text"
+                    name="zenfeed_sitedesc"
+                    label="Описание сайта для Дзена"
+                    description="Описание ленты для Яндекс.Дзен"></field>
+                <field
+                    type="text"
+                    name="zenfeed_sitelang"
+					default="ru"
+                    label="Язык RSS"
+                    description="Язык ленты новостей - RSS"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_defauthor_set"
+                    label="Включить автора по умолчанию?"
+                    description="Если нет у автора имени - использовать по умолчанию"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_defauthor_set_fix"
+                    label="Включить автора для всех одного?"
+                    description="1 автор на все новости"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_defauthor"
+					default="Администратор"
+                    label="Имя автора по умолчанию"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_time"
+					default="+0300"
+                    label="По умолчанию временная зона"
+                    description=""></field>
+            </fieldset>
+            <fieldset name="adspost" label="Настройка сниппетов и рекламы">
+                <field
+                    type="spacer"
+                    name="myspace32"
+                    class="text"
+             label="&lt;b&gt; Настройка сниппетов (текстовых заготовок) &lt;/b&gt; "/>
+                <field
+                    type="radio"
+                    name="zenfeed_site_snippet_top"
+                    label="Включить сниппет вначале статьи?"
+                    description="Текстовая заготовка вначале статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_site_snippet_top_text"
+                    label="Текст вначале статьи (можно теги)"
+                    filter="raw"
+                    default="" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_snippet_center"
+                    label="Включить сниппет между интротекст и фуллтекст?"
+                    description="Текстовая заготовка в середине статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_site_snippet_center_text"
+                    label="Текст в середине статьи (можно теги)"
+                    filter="raw"
+                    default="" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_snippet_bottom"
+                    label="Включить автора для всех одного?"
+                    description="Текстовая заготовка в конце статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_site_snippet_bottom_text"
+                    label="Текст в конце статьи (можно теги)"
+                    filter="raw"
+                    default="" ></field>
+            </fieldset>
+            <fieldset name="comcontentpost" label="Настройки стандартных материалов">
+                <field
+                    type="spacer"
+                    name="myspace1"
+                    class="text"
+             label="&lt;b&gt; Настройки для com_content (стандартные материалы) &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_com_content_catid"
+                    label="ID категорий (через запятую) из которых брать статьи"
+                    description="Требуется указать ID всех категорий откуда брать статьи (вложенные не работают - надо указать все отдельно)"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_introtofull"
+                    label="Добавлять интро текст в полный текст статьи?"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_introtofull_fixempty"
+                    label="Насильно удалять дубли интро в фулл тексте?"
+                    description="Насильно удалять дубли интро в фулл тексте"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_introimage"
+                    label="На сайте используются поля intro-image?"
+                    description="Используются intro поля изображений? специальные поля"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_fullimage"
+                    label="На сайте используются поля full-image?"
+                    description="Используются full поля изображений? специальные поля"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_previmage"
+                    label="Найти первое изображение в интро-тексте для начала статьи?"
+                    description="Ищет изображение и пробует его встатьи в шапку статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_imagetotopplease"
+                    label="Всегда пробовать вставить одно изображение вначало?"
+                    description="Другой способ вставить изображение в шапку. Ищет в спец полях (intro-full) далее уже в полном тексте статьи"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_fields"
+                    label="Включить поддержку доп. полей?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_fields_author_name"
+                    label="Введите переменную допполя автора (для замены в ленте)"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_figurealt"
+                    label="Обрамить тегами figure и alt в подпись?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_striptags"
+                    label="Очищать теги на сайте?"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="spacer"
+                    name="myspace137"
+                    class="text"
+             label="&lt;b&gt; Контент внутри тегов noturbo будет удален в ленте &lt;/b&gt; "/>
+                <field
+                    type="radio"
+                    name="zenfeed_delete_noturbotag"
+                    label="Очищать тег noturbo ?"
+                    description="Удаляет тег noturbo"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="img,a,br,p,table,tr,td,th,iframe"
+                    name="zenfeed_com_content_filterstriptags"
+                    label="Разрешеные теги (strip_tags)"
+                    description="Укажите теги, которые хотите оставить в ленте"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_biem"
+                    label="Очищать теги b, i, strong, em ?"
+                    description="Удаляет стилистические теги"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_pre"
+                    label="Заменять тег pre?"
+                    description="Заменяет тег pre на текст. Тег обычно используется для вставки кодов."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_comcontent_pre_text"
+                    label="Текст на который будет заменен тег"
+                    filter="safehtml"
+                    default="Код смотрите на сайте" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_descmini"
+                    label="Обрезать description до 250 символов?"
+                    description="Ограничивает длину символов описания"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_descmini_count"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_descmini_striptags"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_sef_itemid"
+                    label="Насильно указать пункт меню для генерации ссылок?"
+                    description="Если у Вас неверная структура сайта - включите опцию и ниже укажите пункт меню, где находятся статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_sef_itemid_num"
+					default=""
+                    label="ID пункта меню"
+                    description="В менеджере меню найдите ID пункта меню, который необходим для генерации"></field>
+            </fieldset>
+            <fieldset name="comcontentpostk2" label="K2">
+                <field
+                    type="spacer"
+                    name="myspace621"
+                    class="text"
+             label="&lt;b&gt; Настройки для K2 (стандартные материалы) &lt;/b&gt; "/>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_publish_k2"
+                    label="Публиковать дату начала публикации (вместо даты создания) ?"
+                    description="Заменяем дату создания на дату публикации K2"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_com_content_catid_k2"
+                    label="ID категорий (через запятую)"
+                    description="Требуется указать ID всех категорий откуда брать статьи (вложенные не работают - надо указать все отдельно)"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_previmage_k2"
+                    label="Найти первое изображение в превью для header статьи?"
+                    description="Находит изображение по API K2"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_k2_noimage"
+                    label="Не добавлять фото в начало"
+                    description="Находит изображение по API K2"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_introtofull_k2"
+                    label="Добавлять интро текст в полный текст статьи?"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_imagetotopplease_k2"
+                    label="Всегда пробовать вставить одно изображение вначало?"
+                    description="Другой способ вставить изображение в шапку. Ищет в спец полях (intro-full) далее уже в полном тексте статьи"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_striptags_k2"
+                    label="Очищать теги на сайте?"
+                    description="Удаляет теги в статье"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="img,a,br,p"
+                    name="zenfeed_com_content_filterstriptags_k2"
+                    label="Разрешеные теги (strip_tags)"
+                    description="Укажите теги, которые хотите оставить в ленте"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_biem_k2"
+                    label="Очищать теги b, i, strong, em ?"
+                    description="Удаляет стилистические теги"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_pre_k2"
+                    label="Заменять тег pre?"
+                    description="Заменяет тег pre на текст. Тег обычно используется для вставки кодов."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_comcontent_pre_text_k2"
+                    label="Текст на который будет заменен тег"
+                    filter="safehtml"
+                    default="Код смотрите на сайте" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_descmini_k2"
+                    label="Обрезать description до 250 символов?"
+                    description="Ограничивает длину символов описания"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_descmini_count_k2"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_descmini_striptags_k2"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_extrafields"
+                    label="Включить поддержку доп. полей?"
+                    description="Включается поддержка дополнительных (extra) полей к2."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_gallery"
+                    label="Включить поддержку галерей?"
+                    description="Включается поддержка gallery"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_video"
+                    label="Включить поддержку видео?"
+                    description="Включается поддержка video - allvideos плагин"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="polecena,drugoepole"
+                    name="zenfeed_comcontent_k2_extrafields_alias"
+                    label="Перечислите алиасы доп. полей"
+                    description="Укажите alias экстра полей к2"></field>
+                 <field
+                    type="text"
+                    default=""
+                    name="zenfeed_comcontent_k2_lang"
+                    label="Язык статей (укажите звездочку, если нужны все языки). Или оставьте пустым"
+                    description="Доступен только 1 язык.  Примеры: ru-RU или en-GB"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_img_size"
+                    label="Какие изображения использовать?"
+                    description="Переключатель изображений"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">Generic</option>
+                    <option value="1">XS</option>
+                    <option value="2">S</option>
+                    <option value="3">M</option>
+                    <option value="4">L</option>
+                    <option value="5">XL</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_related_articles"
+                    label="Включить бесконечные статьи?"
+                    description="Включается бесконечные статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_related_articles_block"
+                    label="Включить рекомендуемые статьи?"
+                    description="Включается блок рекомендуемых статей"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comcontent_k2_related_articles_block_img"
+                    label="Включить в рекомендуемые статьи фото?"
+                    description="Включается блок фото в рекомендуемых статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="Статьи по теме: "
+                    name="zenfeed_comcontent_k2_related_articles_text"
+                    label="Текст перед блоком"
+                    description="Укажите название блока"></field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_k2_related_articles_text_tag"
+					default="h3"
+                    label="Тег для блока"
+                    description="Например h3, p и другие парные теги"></field>
+                <field
+                    type="text"
+                    name="zenfeed_comcontent_k2_related_articles_text_count"
+					default="5"
+                    label="Количество статей"
+                    description="Количество статей для блока"></field>
+            </fieldset>
+            <fieldset name="jbzoopost" label="JBZoo">
+                <field
+                    type="spacer"
+                    name="myspace2"
+                    class="text"
+             label="&lt;b&gt; Настройки для JBZoo &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox"
+					default=""
+                    label="ELEMENT_ID чекбокса для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull"
+                    label="ELEMENT_ID тизера (full) текста"
+                    description=""></field>
+                <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="jbzoopostpro" label="JBZoo (alltypes)">
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_1"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo первый тип  =============== &lt;/b&gt; "/>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_1"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_1"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_1"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_1"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_1"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_1"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_1"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_1"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_1"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_1"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_1"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_1"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_1"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_2"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo второй тип  =============== &lt;/b&gt; "/>
+
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_2"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_2"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_2"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_2"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_2"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_2"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_2"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_2"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_2"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_2"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_2"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_2"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_2"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_3"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo третий тип  =============== &lt;/b&gt; "/>
+
+ 
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_3"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_3"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_3"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_3"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_3"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_3"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_3"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_3"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_3"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_3"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_3"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_3"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_3"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_4"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo четвертый тип  =============== &lt;/b&gt; "/>
+
+ 
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_4"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_4"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_4"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_4"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_4"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_4"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_4"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_4"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_4"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_4"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_4"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_4"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_4"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_5"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo пятый тип  =============== &lt;/b&gt; "/>
+
+
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_5"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_5"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_5"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_5"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_5"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_5"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_5"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_5"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_5"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_5"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_5"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_5"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_5"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_6"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo шестой тип  =============== &lt;/b&gt; "/>
+
+ 
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_6"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_6"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_6"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_6"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_6"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_6"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_6"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_6"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_6"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_6"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_6"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_6"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_6"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_7"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo седьмой тип  =============== &lt;/b&gt; "/>
+
+ 
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_7"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_7"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_7"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_7"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_7"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_7"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_7"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_7"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_7"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_7"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_7"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_7"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_7"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_8"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo восьмой тип  =============== &lt;/b&gt; "/>
+
+
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_8"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_8"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_8"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_8"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_8"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_8"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_8"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_8"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_8"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_8"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_8"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_8"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_8"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_9"
+                    class="text"
+             label="&lt;b&gt; ===============  JBZoo девятый тип  =============== &lt;/b&gt; "/>
+
+ 
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_9"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_9"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_9"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_9"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_9"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_9"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_9"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_9"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_9"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_9"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_9"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_9"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_9"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    type="spacer"
+                    name="myspace3_alltypes_10"
+                    class="text"
+             label="&lt;b&gt; =============== JBZoo десятый тип ===============  &lt;/b&gt; "/>
+
+   
+                       <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_gen_on_10"
+                    label="Включить тип?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_app_alltypes_10"
+					default="1"
+                    label="ID приложения"
+                    description=""></field>
+               <field
+                    type="text"
+					default="news"
+                    name="zenfeed_site_jbzoo_type_alltypes_10"
+                    label="Название типа"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_catid_alltypes_10"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_image_alltypes_10"
+                    label="ELEMENT_ID Изображения"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_10"
+                    label="ELEMENT_ID тизера (превью) текста"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descfull_alltypes_10"
+                    label="ELEMENT_ID (full) текста"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_alltypes_gen_10"
+                    label="Создать описание (превью текста) из FULL?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                 <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_10"
+                    label="Обрезать description?"
+                    description="Ограничивает длину символов описания"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_count_10"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_descpreview_descmini_striptags_10"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_cat_replace_jbzoo_element_checkbox_alltypes_10"
+					default=""
+                    label="ELEMENT_ID checkbox для категорий Дзен"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jbzoo_category_nested_alltypes_10"
+                    label="Брать из вложенный категорий тоже?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+            </fieldset>
+             <fieldset name="jsh" label="JoomShopping ">
+                <field
+                    type="spacer"
+                    name="myspace2"
+                    class="text"
+             label="&lt;b&gt; Настройки для JoomShopping  &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_catid"
+                    label="ID категорий (через запятую)"
+                    description=""></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_author"
+                    label="Имя автора"
+                    description=""></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_descmini"
+                    label="Обрезать description до 250 символов?"
+                    description="Ограничивает длину символов описания"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_descmini_count"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_img_path"
+					default="/components/com_jshopping/files/img_products/"
+                    label="Путь к фото"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_descmini_striptags"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_introtofull"
+                    label="Добавлять интро текст в полный текст статьи?"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_intropreview"
+                    label="Если нет описания - вставлять имя товара"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_introsmallimg"
+                    label="Вставлять превью фото перед текстом?"
+                    description="Вставлять превью фото перед текстом"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_price_beforetext"
+                    label="Вставлять цену до текста"
+                    description="Вставляет цену до текста"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_price_text"
+					default="Цена: "
+                    label="Текст цены"
+                    description="Цена"></field>
+                <field
+                    type="text"
+                    name="zenfeed_site_jsh_price_text_tag"
+					default="h3"
+                    label="Тег для цены"
+                    description="Например h3, p и другие парные теги"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_site_jsh_img_gallery"
+                    label="Вставлять галерею?"
+                    description="Вставляет галерею"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="vmpost" label="VirtueMart v.3">
+                <field
+                    type="spacer"
+                    name="myspace31211"
+                    class="text"
+             label="&lt;b&gt; Настройки для VirtueMart v.3+ версии &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_vm3_catid"
+                    label="ID категорий (через запятую) из которых брать статьи"
+                    description="Требуется указать ID всех категорий откуда брать статьи (вложенные не работают - надо указать все отдельно)"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_fastselleroff"
+                    label="Установлен Fastseller?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_textoff"
+                    label="Убрать описание товара?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_modtitle"
+                    label="Добавлять в заголовок модификатор?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">Категорию (после имени)</option>
+                    <option value="2">Категорию (до имени)</option>
+                    <option value="3">Произвольный текст</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_vm3_modtitle_text_pre"
+                    label="Префикс - Текст дополнения для заголовка"
+                    description="Допишите требуемое слово - например адрес сайта или другую информацию"></field>
+                <field
+                    type="text"
+                    name="zenfeed_vm3_modtitle_text_post"
+                    label="Постфикс - Текст дополнения для заголовка"
+                    description="Допишите требуемое слово - например адрес сайта или другую информацию"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_categorydesc"
+                    label="Брать описание из категории?"
+                    description=""
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_introtofull"
+                    label="Добавлять интро текст в полный текст статьи?"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_previmage"
+                    label="Найти первое изображение в интро-тексте для начала статьи?"
+                    description="Ищет изображение и пробует его встатьи в шапку статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_imagetotopplease"
+                    label="Всегда пробовать вставить одно изображение вначало?"
+                    description="Другой способ вставить изображение в шапку. Ищет в спец полях (intro-full) далее уже в полном тексте статьи"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_arrayuni"
+                    label="Произвести глубокую чистку ленты на дубли?"
+                    description="Применяется к массиву unserialize array_unique array_map serialize"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_striptags"
+                    label="Очищать теги на сайте?"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="spacer"
+                    name="myspace137"
+                    class="text"
+             label="&lt;b&gt; Контент внутри тегов noturbo будет удален в ленте &lt;/b&gt; "/>
+                <field
+                    type="radio"
+                    name="zenfeed_delete__vm3_noturbotag"
+                    label="Очищать тег noturbo ?"
+                    description="Удаляет тег noturbo"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="img,a,br,p"
+                    name="zenfeed_vm3_filterstriptags"
+                    label="Разрешеные теги (strip_tags)"
+                    description="Укажите теги, которые хотите оставить в ленте"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_biem"
+                    label="Очищать теги b, i, strong, em ?"
+                    description="Удаляет стилистические теги"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_pre"
+                    label="Заменять тег pre?"
+                    description="Заменяет тег pre на текст. Тег обычно используется для вставки кодов."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_vm3_pre_text"
+                    label="Текст на который будет заменен тег"
+                    filter="safehtml"
+                    default="Код смотрите на сайте" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_descmini"
+                    label="Обрезать description до 250 символов?"
+                    description="Ограничивает длину символов описания"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_vm3_descmini_count"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_vm3_descmini_striptags"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="youthemepro" label="YouTheme PRO">
+                <field
+                    type="spacer"
+                    name="myspace1"
+                    class="text"
+             label="&lt;b&gt; Настройки для YouTheme PRO &lt;/b&gt; "/>
+                <field
+                    type="text"
+                    name="zenfeed_com_youthemepro_catid"
+                    label="ID категорий (через запятую) из которых брать статьи"
+                    description="Требуется указать ID всех категорий откуда брать статьи (вложенные не работают - надо указать все отдельно)"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_introtofull"
+                    label="Добавлять интро текст в полный текст статьи?"
+                    description="Добавлять интро текст в полный текст статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_introtofull_fixempty"
+                    label="Насильно удалять дубли интро в фулл тексте?"
+                    description="Насильно удалять дубли интро в фулл тексте"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_introimage"
+                    label="На сайте используются поля intro-image?"
+                    description="Используются intro поля изображений? специальные поля"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_fullimage"
+                    label="На сайте используются поля full-image?"
+                    description="Используются full поля изображений? специальные поля"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_previmage"
+                    label="Найти первое изображение в интро-тексте для начала статьи?"
+                    description="Ищет изображение и пробует его встатьи в шапку статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_imagetotopplease"
+                    label="Всегда пробовать вставить одно изображение вначало?"
+                    description="Другой способ вставить изображение в шапку. Ищет в спец полях (intro-full) далее уже в полном тексте статьи"
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_striptags"
+                    label="Очищать теги на сайте?"
+                    description=""
+                    default="1"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    default="img,a,br,p"
+                    name="zenfeed_com_youthemepro_filterstriptags"
+                    label="Разрешеные теги (strip_tags)"
+                    description="Укажите теги, которые хотите оставить в ленте"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_biem"
+                    label="Очищать теги b, i, strong, em ?"
+                    description="Удаляет стилистические теги"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_pre"
+                    label="Заменять тег pre?"
+                    description="Заменяет тег pre на текст. Тег обычно используется для вставки кодов."
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="textarea"
+                    rows="5"
+                    name="zenfeed_comyouthemepro_pre_text"
+                    label="Текст на который будет заменен тег"
+                    filter="safehtml"
+                    default="Код смотрите на сайте" ></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_descmini"
+                    label="Обрезать description до 250 символов?"
+                    description="Ограничивает длину символов описания"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comyouthemepro_descmini_count"
+					default="250"
+                    label="Кол-во символов выводимых в описании"
+                    description="Кол-во символов для описания"></field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_descmini_striptags"
+                    label="Очищать от тегов description?"
+                    description="Очистка от тегов striptags"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="radio"
+                    name="zenfeed_comyouthemepro_sef_itemid"
+                    label="Насильно указать пункт меню для генерации ссылок?"
+                    description="Если у Вас неверная структура сайта - включите опцию и ниже укажите пункт меню, где находятся статьи"
+                    default="0"
+                    class="btn-group btn-group-yesno">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    type="text"
+                    name="zenfeed_comyouthemepro_sef_itemid_num"
+					default=""
+                    label="ID пункта меню"
+                    description="В менеджере меню найдите ID пункта меню, который необходим для генерации"></field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

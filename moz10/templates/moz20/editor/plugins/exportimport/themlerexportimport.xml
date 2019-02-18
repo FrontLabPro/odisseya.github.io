@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+    <name>PLG_CONTENT_THEMLEREXPORTIMPORT</name>
+    <author/>
+    <creationDate/>
+    <copyright/>
+    <license/>
+    <authorEmail/>
+    <authorUrl/>
+    <version>1.0.16</version>
+    <description>PLG_CONTENT_THEMLEREXPORTIMPORT_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="themlerexportimport">themlerexportimport.php</filename>
+        <filename>index.html</filename>
+        <folder>fields</folder>
+        <folder>core</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_themlerexportimport.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_themlerexportimport.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/plugins/content/themlerexportimport/fields">
+            <fieldset name="basic">
+                <field name="articlesnumber" type="text" label="PLG_CONTENT_THEMLEREXPORTIMPORT_ARTICLESNUMBER_LABEL" text="" default="100" description="PLG_CONTENT_THEMLEREXPORTIMPORT_ARTICLESNUMBER_DESC"/>
+                <field name="export" type="export" label="" text="" description=""/>
+                <field type="spacer" name="spacer" hr="true"/>
+                <field name="import" type="import" label="PLG_CONTENT_THEMLEREXPORTIMPORT_IMPORT_LABEL" text="" description=""/>
+                <field name="replacecontent" type="checkbox" label="PLG_CONTENT_THEMLEREXPORTIMPORT_REPLACECONTENT_LABEL" default="0" description="PLG_CONTENT_THEMLEREXPORTIMPORT_REPLACECONTENT_DESC"/>
+                <field type="hidden"  name="idsData" default="" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

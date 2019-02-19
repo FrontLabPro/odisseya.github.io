@@ -48,12 +48,6 @@
   
   <link rel="preload" as="style" media="all" href="assets/inline-styles.css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="assets/inline-styles.css" rel="stylesheet" /></noscript>
 
-  <link rel="preload" as="style" media="all" href="cache/com_templates/templates/shaper_helixultimate/af22fec96cc8ec1cb5469ed2c7a1a969.css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="cache/com_templates/templates/shaper_helixultimate/af22fec96cc8ec1cb5469ed2c7a1a969.css" rel="stylesheet" /></noscript>
-
-  <link rel="preload" as="style" media="all" href="components/com_k2/css/k2.css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="components/com_k2/css/k2.css" rel="stylesheet" /></noscript>
-
-  <link rel="preload" as="style" media="all" href="assets/simple-line-icons.min.css" rel="stylesheet" type="text/css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="assets/simple-line-icons.min.css" rel="stylesheet" type="text/css" rel="stylesheet" /></noscript>
-
   <!-- Предзагрузка JS -->
   <link rel="preload" href="cache/com_templates/templates/shaper_helixultimate/78f6e0a45279e8a2561185ee6042e8d7.js" as="script">
   <link rel="preload" href="assets/lozad.min.js" as="script">
@@ -2335,5 +2329,24 @@
   }
   </script>
   <!-- End: Google Structured Data -->
+  <!-- Async styles -->
+  <script>
+  var cb = function() {
+    var styles = [
+      'cache/com_templates/templates/shaper_helixultimate/af22fec96cc8ec1cb5469ed2c7a1a969.css',
+      'components/com_k2/css/k2.css',
+      'assets/simple-line-icons.min.css',
+    ];
+    for (var i=0; i<styles.length; i++){
+      var l = document.createElement('link'); l.rel = 'stylesheet';
+      l.href = styles[i];
+      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    }
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+  </script>
+  <!-- End: Async styles -->
 </body>
 </html>

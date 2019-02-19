@@ -25,45 +25,14 @@
   <!-- End: CriticalCSS -->
 
   <link href="images/favicon241.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-  <script type="application/json" class="joomla-script-options new"> { "csrf.token": "6d86861d166c472987627d9e9f4eb58c", "system.paths": { "root": "", "base": "" } } </script>
-  <script src="cache/com_templates/templates/shaper_helixultimate/78f6e0a45279e8a2561185ee6042e8d7.js" type="text/javascript"></script>
-  <script src="media/k2/assets/js/k2.frontend.js" type="text/javascript"></script>
-  <script src="media/system/js/core.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    ;
-    (function($) {
-      $.ajaxSetup({
-        headers: {
-          'X-CSRF-Token': Joomla.getOptions('csrf.token')
-        }
-      });
-    })(jQuery);
-    jQuery(document).ready(function($) {
-      'use strict';
-      $('#sppb-addon-1546117217632' + ' .sppb-addon-accordion .sppb-panel-heading').removeClass('active');
-      $('#sppb-addon-1546117217632' + ' .sppb-addon-accordion .sppb-panel-collapse').hide();
-    });
 
-    template = "shaper_helixultimate";
-  </script>
   <meta property="og:title" content="Центр лечения зависимостей " />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="//odisseya.github.io/moz10/" />
   <meta property="og:site_name" content="Клиника Марии Фроловой" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Клиника Марии Фроловой" />
-  <!-- Start: Google Structured Data -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Клиника Марии Фроловой",
-    "url": "//odisseya.github.io/moz10/"
-  }
-  </script>
-  <!-- End: Google Structured Data -->
-
+  
   <!-- Async Styles -->
   
   <link rel="preload" as="style" media="all" href="assets/inline-styles.css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="assets/inline-styles.css" rel="stylesheet" /></noscript>
@@ -73,6 +42,11 @@
   <link rel="preload" as="style" media="all" href="components/com_k2/css/k2.css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="components/com_k2/css/k2.css" rel="stylesheet" /></noscript>
 
   <link rel="preload" as="style" media="all" href="assets/simple-line-icons.min.css" rel="stylesheet" type="text/css" onload="this.onload=null;this.rel='stylesheet'" /><noscript id="aonoscrcss"><link type="text/css" media="all" href="assets/simple-line-icons.min.css" rel="stylesheet" type="text/css" rel="stylesheet" /></noscript>
+
+  <!-- Предзагрузка JS -->
+  <link rel="preload" href="cache/com_templates/templates/shaper_helixultimate/78f6e0a45279e8a2561185ee6042e8d7.js" as="script">
+  <link rel="preload" href="assets/lozad.min.js" as="script">
+  <link rel="preload" href="media/system/js/core.js" as="script">
 </head>
 
 <body class="site helix-ultimate com-sppagebuilder view-page layout-default task-none itemid-347 ru-ru ltr sticky-header layout-fluid offcanvas-init offcanvs-position-right">
@@ -2316,6 +2290,39 @@
   const observer = lozad(el); // lazy loads elements with default selector as '.lozad'
   observer.observe();
   </script>
+  <!-- End Lazy loading images -->
 
+  <script type="application/json" class="joomla-script-options new"> { "csrf.token": "6d86861d166c472987627d9e9f4eb58c", "system.paths": { "root": "", "base": "" } } </script>
+  <script src="cache/com_templates/templates/shaper_helixultimate/78f6e0a45279e8a2561185ee6042e8d7.js" type="text/javascript"></script>
+  <script src="media/k2/assets/js/k2.frontend.js" type="text/javascript"></script>
+  <script src="media/system/js/core.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    ;
+    (function($) {
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-Token': Joomla.getOptions('csrf.token')
+        }
+      });
+    })(jQuery);
+    jQuery(document).ready(function($) {
+      'use strict';
+      $('#sppb-addon-1546117217632' + ' .sppb-addon-accordion .sppb-panel-heading').removeClass('active');
+      $('#sppb-addon-1546117217632' + ' .sppb-addon-accordion .sppb-panel-collapse').hide();
+    });
+
+    template = "shaper_helixultimate";
+  </script>
+
+  <!-- Start: Google Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Клиника Марии Фроловой",
+    "url": "//odisseya.github.io/moz10/"
+  }
+  </script>
+  <!-- End: Google Structured Data -->
 </body>
 </html>

@@ -2358,9 +2358,9 @@
 
   function onPageScrollOnce(evt){
     if (areScriptsLoaded === false) {
-      window.setTimeout(function() {
+      // window.setTimeout(function() {
         thirdPartyScripts();
-      }.bind(this), 10000);
+      // }.bind(this), 10000);
     }
     evt.target.removeEventListener(evt.type, onPageScrollOnce);
   }

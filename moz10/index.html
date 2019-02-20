@@ -2252,6 +2252,7 @@
   //////////////////////////////////
   // Third-party scripts
   //////////////////////////////////
+  var areScriptsLoaded = false;
   function scriptAsync(url) {
     var s = document.createElement('script');
     s.type = 'text/javascript';
@@ -2263,6 +2264,8 @@
   }
 
   function thirdPartyScripts(){
+    isScriptsLoaded = true;
+
     // Global site tag (gtag.js) - Google Analytics
     scriptAsync("//www.googletagmanager.com/gtag/js?id=UA-125273923-1");
     window.dataLayer = window.dataLayer || []; 
@@ -2353,12 +2356,15 @@
     })(document, window, "topmailru-code");
   }
 
-  window.addEventListener('click', function (){
-    window.setTimeout(function() {
-      thirdPartyScripts();
-    }.bind(this), 10000);
-  });
-
+  function onPageScrollOnce(evt){
+    if (areScriptsLoaded === false) {
+      window.setTimeout(function() {
+        thirdPartyScripts();
+      }.bind(this), 10000);
+    }
+    evt.target.removeEventListener(evt.type, onPageScrollOnce);
+  }
+  window.addEventListener('scroll', onPageScrollOnce);
   </script>
 </body>
 </html>

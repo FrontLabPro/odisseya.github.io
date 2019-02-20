@@ -96,16 +96,7 @@
     jivo_api.setUserToken(getCookie('roistat_visit'));
   }
   </script> -->
-  <!-- END JIVOSITE INTEGRATION WITH ROISTAT -->
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125273923-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || []; 
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date()); 
-  gtag('config', 'UA-125273923-1');
-  </script>
+  <!-- END JIVOSITE INTEGRATION WITH ROISTAT -->  
 
   <!-- Yandex.Metrika counter -->
   <!-- <script type="text/javascript">
@@ -2345,5 +2336,28 @@
   else window.addEventListener('load', cb);
   </script>
   <!-- End: Async styles -->
+
+  <script>
+  //////////////////////////////////
+  // Third-party scripts
+  //////////////////////////////////
+  function scriptAsync(url) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var x = document.getElementsByTagName('head')[0];
+    x.appendChild(s);
+  }
+
+  window.onload = function(){
+    // Global site tag (gtag.js) - Google Analytics
+    scriptAsync("//www.googletagmanager.com/gtag/js?id=UA-125273923-1");
+    window.dataLayer = window.dataLayer || []; 
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-125273923-1');
+  };
+  </script>
 </body>
 </html>

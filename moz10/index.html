@@ -2262,7 +2262,7 @@
     x.appendChild(s);
   }
 
-  window.onload = function(){
+  function thirdPartyScripts(){
     // Global site tag (gtag.js) - Google Analytics
     scriptAsync("//www.googletagmanager.com/gtag/js?id=UA-125273923-1");
     window.dataLayer = window.dataLayer || []; 
@@ -2351,7 +2351,14 @@
         s.parentNode.insertBefore(ts, s); };
       if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
     })(document, window, "topmailru-code");
-  };
+  }
+
+  window.addEventListener('load', function (){
+    window.setTimeout(function() {
+      thirdPartyScripts();
+    }.bind(this), 10000);
+  });
+
   </script>
 </body>
 </html>

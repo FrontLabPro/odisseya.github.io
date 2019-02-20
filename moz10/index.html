@@ -2182,7 +2182,8 @@
   // Вкл. прокрутку первого  слайда на таблетах+
   var vWidth = window.innerWidth && document.documentElement.clientWidth ? Math.min(window.innerWidth, document.documentElement.clientWidth) : window.innerWidth || document.documentElement.clientWidth ||
   document.getElementsByTagName('body')[0].clientWidth;
-  if ((vWidth+17)>600) {
+  window.isMobileWidth = (vWidth+17)<600;
+  if (!isMobileWidth) {
     document.querySelector('.carousel-item-1').closest('.sppb-carousel').dataset.interval = 5000;
   }
   </script>
@@ -2263,9 +2264,7 @@
     x.appendChild(s);
   }
 
-  function thirdPartyScripts(){
-    isScriptsLoaded = true;
-
+  function priorityThirdPartScripts(){
     // Global site tag (gtag.js) - Google Analytics
     scriptAsync("//www.googletagmanager.com/gtag/js?id=UA-125273923-1");
     window.dataLayer = window.dataLayer || []; 
@@ -2300,7 +2299,10 @@
       } else { f(); }
     })(document, window, "yandex_metrika_callbacks2");
     // /Yandex.Metrika counter
+  }
 
+  function thirdPartScripts(){
+    isScriptsLoaded = true;
 
     // Roistat
     (function(w, d, s, h, id) {
@@ -2359,11 +2361,14 @@
   function onPageScrollOnce(evt){
     if (areScriptsLoaded === false) {
       // window.setTimeout(function() {
-        thirdPartyScripts();
+      if (isMobileWidth) { priorityThirdPartScripts(); }  
+      thirdPartScripts();
       // }.bind(this), 10000);
     }
     evt.target.removeEventListener(evt.type, onPageScrollOnce);
   }
+
+  if (window.isMobileWidth === false) { window.addEventListener('load', priorityThirdPartScripts); }
   window.addEventListener('scroll', onPageScrollOnce);
   </script>
 </body>

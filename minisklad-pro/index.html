@@ -2290,14 +2290,14 @@
 			var l = document.createElement('link'); 
 			l.href = cssUrls[i];
 			l.rel = 'stylesheet';
-			var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+			document.body.appendChild(l);
 		}
 	};
 
 	var raf = requestAnimationFrame || mozRequestAnimationFrame ||
 	webkitRequestAnimationFrame || msRequestAnimationFrame;
-	if (raf) raf(setTimeout(cb, 0));
-	else window.addEventListener('load', function() { setTimeout(cb, 0) });
+	if (raf) raf(cb);
+	else window.addEventListener('load', function() { cb});
 	</script>
 
 	<noscript>

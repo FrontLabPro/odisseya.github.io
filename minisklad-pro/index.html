@@ -2535,7 +2535,7 @@
 	var raf = requestAnimationFrame || mozRequestAnimationFrame ||
 	webkitRequestAnimationFrame || msRequestAnimationFrame;
 	if (raf) raf(cb);
-	else window.addEventListener('load', function() { cb});
+	else window.addEventListener('load', cb);
 	</script>
 
 	<noscript>

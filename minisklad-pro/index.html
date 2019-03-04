@@ -2275,40 +2275,7 @@
 	</ul>
 	<a class="scroll_top"><i class="fa fa-angle-up"></i></a>
 
-	<script>
-	var cb = function() {
-		var cssUrls = [
-			"fnt/font.css",
-			"css/style.css",
-			"css/bootstrap.min.css",
-			"js/ui/jquery-ui.min.css",
-			"css/jquery.fancybox.min.css",
-			"css/slick.css",
-			"css/animate.3.5.2.css",
-		];
-		for (var i=0; i<cssUrls.length; i++){
-			var l = document.createElement('link'); 
-			l.href = cssUrls[i];
-			l.rel = 'stylesheet';
-			document.body.appendChild(l);
-		}
-	};
-
-	var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-	webkitRequestAnimationFrame || msRequestAnimationFrame;
-	if (raf) raf(cb);
-	else window.addEventListener('load', function() { cb});
-	</script>
-
-	<noscript>
-		<link rel="stylesheet" type="text/css" href="fnt/font.css" >
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="js/ui/jquery-ui.min.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
-		<link rel="stylesheet" type="text/css" href="css/slick.css">
-		<link rel="stylesheet" type="text/css" href="css/animate.3.5.2.css">
-	</noscript>
+	
 
 	<script src="js/jquery-1.12.0.min.js"></script>
 	<script  src="js/lazyload.js"></script>
@@ -2545,5 +2512,40 @@
   else{w.addEventListener('load',l,false);}}})();
 </script> -->
 <!-- {/literal} END JIVOSITE CODE -->
+
+<script>
+	var cb = function() {
+		var cssUrls = [
+			"fnt/font.css",
+			"css/style.css",
+			"css/bootstrap.min.css",
+			"js/ui/jquery-ui.min.css",
+			"css/jquery.fancybox.min.css",
+			"css/slick.css",
+			"css/animate.3.5.2.css",
+		];
+		for (var i=0; i<cssUrls.length; i++){
+			var l = document.createElement('link'); 
+			l.href = cssUrls[i];
+			l.rel = 'stylesheet';
+			document.body.appendChild(l);
+		}
+	};
+
+	var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+	webkitRequestAnimationFrame || msRequestAnimationFrame;
+	if (raf) raf(cb);
+	else window.addEventListener('load', function() { cb});
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" type="text/css" href="fnt/font.css" >
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="js/ui/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+		<link rel="stylesheet" type="text/css" href="css/slick.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.3.5.2.css">
+	</noscript>
 </body>
 </html>

@@ -870,8 +870,9 @@ label.error{font-size:12px !important; line-height:20px !important; color:#f00 !
 	.sect_top_video{padding:30px 0px 30px; background:#006AAC}
 		.sect_top_video .top_video_art{margin:20px 0px 0px;}
 		.sect_top_video .video_link_bl{padding:0px 0px 0px;}
-		.sect_top_video .video_link_bl .link{width:540px; height:285px; background:url(../img/mob_video_bg.png) no-repeat center center; margin:0px auto; position:relative; background-size:cover}
-			.sect_top_video .video_link_bl .link::after{content:''; display:block; width:64px; height:74px; position:absolute; top:50%; left:50%; margin:-37px 0px 0px -32px; background:url(../img/sprite.png) no-repeat 0px -266px;}
+		.sect_top_video .video_link_bl .link{width:540px; height:285px; background:url(../img/mob_video_bg.jpg) no-repeat center center; margin:0px auto; position:relative; background-size:cover}
+		@media(max-width: 640px) {.sect_top_video .video_link_bl .link { background-image:url(../img/mob_video_bg--m.jpg); }}
+    	.sect_top_video .video_link_bl .link::after{content:''; display:block; width:64px; height:74px; position:absolute; top:50%; left:50%; margin:-37px 0px 0px -32px; background:url(../img/sprite.png) no-repeat 0px -266px;}
 			.sect_top_video .video_link_bl .info{margin:20px auto 0px; color:#fff; width:400px; float:none;}
 	.sect_advantages{padding:30px 0px 1px;}
 		.sect_advantages .list li{width:33.33%; margin:0px 0px 20px;}

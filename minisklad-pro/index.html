@@ -50,34 +50,9 @@
 			<link rel="stylesheet" type="text/css" href="css/slick.css">
 			<link rel="stylesheet" type="text/css" href="css/animate.3.5.2.css">
 		</noscript>
-		
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132696169-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-132696169-1');
-		</script> -->
 
-		<!-- Yandex.Metrika counter -->
-		<!-- <script async type="text/javascript" >
-			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-			ym(51954575, "init", {
-				id:51954575,
-				clickmap:true,
-				trackLinks:true,
-				accurateTrackBounce:true,
-				webvisor:true
-			});
-		</script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/51954575" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
-		<!-- /Yandex.Metrika counter -->
-
-		<!-- <meta name="google-site-verification" content="c1flAnnPgXfyohL49PoCElsMwQcuQNqn3dWdZ3DX2V8" />
-		<meta name="yandex-verification" content="dd405e7bfbdb086e" /> -->
+		<meta name="google-site-verification" content="c1flAnnPgXfyohL49PoCElsMwQcuQNqn3dWdZ3DX2V8" />
+		<meta name="yandex-verification" content="dd405e7bfbdb086e" />
 
 	</head>
 	<body>
@@ -2283,9 +2258,11 @@
 	</ul>
 	<a class="scroll_top"><i class="fa fa-angle-up"></i></a>
 
+	<noscript><div><img src="https://mc.yandex.ru/watch/51954575" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 
-	<script src="js/lazyload.js"></script>	
+
+	<script src="js/lazyload.js"></script>
 	<script>
 		let images = document.querySelectorAll("img.lazy, img.ll");
 		lazyload(images);
@@ -2302,8 +2279,54 @@
 	<script defer="defer" src="js/theme.js"></script>
 	<script defer="defer" src="js/calc.js"></script>
 	<script defer="defer" src="js/wow.min.js"></script>
+	
 
-	<!-- <script>
+	
+	<script>
+  //////////////////////////////////
+  // Third-part scripts
+  //////////////////////////////////
+  var areScriptsLoaded = false;
+
+  function loadScript(url, callback=null) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.type='text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+
+    if (callback) {
+      script.onload = function() {
+        callback();
+      };
+    }
+  }
+
+  function thirdPartScripts(){
+    isScriptsLoaded = true;
+    
+
+    // Global site tag (gtag.js) - Google Analytics
+    loadScript('//www.googletagmanager.com/gtag/js?id=UA-132696169-1');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-132696169-1');
+		
+
+		// Yandex.Metrika counter
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+		ym(51954575, "init", {
+			id:51954575,
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+		});
+		// /Yandex.Metrika counter
+
 		if((window.innerWidth>900)||(window.innerWidth<100)){
 			function metrica(){
 				(function(d,w,c){
@@ -2312,107 +2335,130 @@
 				if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded", f, false);}else{f();}})(document,window,"yandex_metrika_callbacks");
 				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 				ga('create','UA-109852192-1','auto');ga('send','pageview');
-			}metrica();}
-	</script> -->
+			}metrica();
+		}
 
-	<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script >
-		ymaps.ready(init);
-		var placemarks = [
-		{
-			latitude: 55.69739567,
-			longitude: 37.22867195,
-			hintContent: '<div class="map__hint">г.Одинцово Красногорское ш., 5-й км</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">г.Одинцово</p ><p style="color:#3a3a3a;padding-left:15px;">Красногорское ш., 5-й км</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><a href="./hraneniye-veshchey-odintsovo.html"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></a></div>',
-			'</div>'
-			]
-		},
-		{
-			latitude: 55.67265062,
-			longitude: 37.80256275,
-			hintContent: '<div class="map__hint">м. Люблино ул. Ставропольская, д. 84</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Люблино</p ><p style="color:#3a3a3a;padding-left:15px;">ул. Ставропольская, д. 84</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
-			'</div>'
-			]
-		},
-		{
-			latitude: 55.60693715,
-			longitude: 37.79201094,
-			hintContent: '<div class="map__hint">м. Алма-Атинская Поселок Беседы, деревня Мильково 100А</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Алма-Атинская</p ><p style="color:#3a3a3a;padding-left:15px;">Поселок Беседы, деревня Мильково 100А</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
-			'</div>'
-			]
-		},
-		{
-			latitude: 55.70057062,
-			longitude: 37.69266728,
-			hintContent: '<div class="map__hint">м. Кожуховская 2-й Южнопортовый проезд 26а</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Кожуховская</p ><p style="color:#3a3a3a;padding-left:15px;">2-й Южнопортовый проезд 26а</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
-			'</div>'
-			]
-		},
-		{
-			latitude: 55.88399792,
-			longitude: 37.39164297,
-			hintContent: '<div class="map__hint">м.Планерная ул.Ландышевая, вл17</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Планерная</p ><p style="color:#3a3a3a;padding-left:15px;">ул. Ландышевая, ул17</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
-			'</div>'
-			]
-		},
-		{
-			latitude: 55.76711534,
-			longitude: 37.38259856,
-			hintContent: '<div class="map__hint">м.Крылатское Рублёвское шоссе, 68А</div>',
-			balloonContent: [
-			'<div class="map__balloon">',
-			'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Крылатское</p ><p style="color:#3a3a3a;padding-left:15px;">Рублёвское шоссе, 68А</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
-			'</div>'
-			]
-		}
-		],
-		geoObjects = [];
-		function init() {
-			var map = new ymaps.Map('map', {
-				center: [55.76257267, 37.52790455],
-				zoom: 9.5,
-				controls: [],
-			});
-			for (var i = 0; i < placemarks.length; i++) {
-				geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude],
-				{
-					hintContent: placemarks[i].hintContent,
-					balloonContent: placemarks[i].balloonContent.join('')
-				},
-				{
-					iconLayout: 'default#image',
-					iconImageHref: 'img/placemark.png',
-					iconImageSize: [28, 50]
-				});
+
+		// Yandex Maps
+		loadScript('//api-maps.yandex.ru/2.1/?lang=ru_RU', function() {
+			ymaps.ready(init);
+			var placemarks = [
+			{
+				latitude: 55.69739567,
+				longitude: 37.22867195,
+				hintContent: '<div class="map__hint">г.Одинцово Красногорское ш., 5-й км</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">г.Одинцово</p ><p style="color:#3a3a3a;padding-left:15px;">Красногорское ш., 5-й км</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><a href="./hraneniye-veshchey-odintsovo.html"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></a></div>',
+				'</div>'
+				]
+			},
+			{
+				latitude: 55.67265062,
+				longitude: 37.80256275,
+				hintContent: '<div class="map__hint">м. Люблино ул. Ставропольская, д. 84</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Люблино</p ><p style="color:#3a3a3a;padding-left:15px;">ул. Ставропольская, д. 84</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
+				'</div>'
+				]
+			},
+			{
+				latitude: 55.60693715,
+				longitude: 37.79201094,
+				hintContent: '<div class="map__hint">м. Алма-Атинская Поселок Беседы, деревня Мильково 100А</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Алма-Атинская</p ><p style="color:#3a3a3a;padding-left:15px;">Поселок Беседы, деревня Мильково 100А</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button href="javascript:void(0);" popup="popup_call" class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
+				'</div>'
+				]
+			},
+			{
+				latitude: 55.70057062,
+				longitude: 37.69266728,
+				hintContent: '<div class="map__hint">м. Кожуховская 2-й Южнопортовый проезд 26а</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Кожуховская</p ><p style="color:#3a3a3a;padding-left:15px;">2-й Южнопортовый проезд 26а</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
+				'</div>'
+				]
+			},
+			{
+				latitude: 55.88399792,
+				longitude: 37.39164297,
+				hintContent: '<div class="map__hint">м.Планерная ул.Ландышевая, вл17</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Планерная</p ><p style="color:#3a3a3a;padding-left:15px;">ул. Ландышевая, ул17</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
+				'</div>'
+				]
+			},
+			{
+				latitude: 55.76711534,
+				longitude: 37.38259856,
+				hintContent: '<div class="map__hint">м.Крылатское Рублёвское шоссе, 68А</div>',
+				balloonContent: [
+				'<div class="map__balloon">',
+				'<div style="display: block; height: 100px; weight: 200px;"><p style="font-weight:bold; font-size:20px;padding:10px 0px 0px 15px;">м. Крылатское</p ><p style="color:#3a3a3a;padding-left:15px;">Рублёвское шоссе, 68А</p><p style="color:#3a3a3a;padding-left:15px;">Всего контейнеров:<b> 8</b></p><p style="color:#3a3a3a;padding-left:15px;">Свободно контейнеров:<span style="color:#fff;margin-left:5px;background-color:#49D295;padding:3px 7px;border-radius:4px;font-weight:700;">5</span></p></div ><p style="font-weight:bold; font-size:24px;margin-top:25px;padding:0px 0px 7px 15px;">+7 499 322 87 63</p><div style="padding: 0px 0px 20px 15px;"><button class="button" style=":hover{box-shadow:0px 0px 0px rgba(97,143,205,0.22);}{display:inline-block; vertical-align:top; background:#4290D0; font-size:14px; line-height:30px; font-weight:700; color:#fff !important; text-decoration: none !important; text-transform:uppercase; border:0px; padding:7px 19px; border-radius:5px; letter-spacing:3px; position:relative; overflow:hidden; box-shadow:0px 12px 19px rgba(97,143,205,0.22); text-align:center;margin-top:7px;}">Подробнее</button></div>',
+				'</div>'
+				]
 			}
-			var clusterer = new ymaps.Clusterer({
-				clusterIcons: [
-				{
-					href: 'img/burger.png',
-					size: [100, 100],
-					offset: [-50, -50]
+			],
+			geoObjects = [];
+			function init() {
+				var map = new ymaps.Map('map', {
+					center: [55.76257267, 37.52790455],
+					zoom: 9.5,
+					controls: [],
+				});
+				for (var i = 0; i < placemarks.length; i++) {
+					geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude],
+					{
+						hintContent: placemarks[i].hintContent,
+						balloonContent: placemarks[i].balloonContent.join('')
+					},
+					{
+						iconLayout: 'default#image',
+						iconImageHref: 'img/placemark.png',
+						iconImageSize: [28, 50]
+					});
 				}
-				],
-				clusterIconContentLayout: null
-			});
-			map.geoObjects.add(clusterer);
-			clusterer.add(geoObjects);
-		}
-	</script> -->
+				var clusterer = new ymaps.Clusterer({
+					clusterIcons: [
+					{
+						href: 'img/burger.png',
+						size: [100, 100],
+						offset: [-50, -50]
+					}
+					],
+					clusterIconContentLayout: null
+				});
+				map.geoObjects.add(clusterer);
+				clusterer.add(geoObjects);
+			}
+		});
+		
+
+		// BEGIN JIVOSITE CODE {literal}
+		(function(){ var widget_id = 'zdzDyryJgj';var d=document;var w=window;function l() {
+		  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+		  s.src = '//code.jivosite.com/script/widget/'+widget_id
+		    ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+		  if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+		  else{w.addEventListener('load',l,false);}}})();
+		// {/literal} END JIVOSITE CODE 
+  }
+
+  function onPageScrollOnce(evt){
+    if (areScriptsLoaded === false) {
+      thirdPartScripts();
+    }
+    window.removeEventListener('scroll', onPageScrollOnce);
+  }
+  window.addEventListener('scroll', onPageScrollOnce);
+	</script>
+
+
 
 	<script type="application/ld+json">
 		{
@@ -2503,15 +2549,5 @@
 		}
 	</script>
 
-	<!-- BEGIN JIVOSITE CODE {literal} -->
-<!-- <script type='text/javascript'>
-(function(){ var widget_id = 'zdzDyryJgj';var d=document;var w=window;function l(){
-  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-  s.src = '//code.jivosite.com/script/widget/'+widget_id
-    ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
-  if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
-  else{w.addEventListener('load',l,false);}}})();
-</script> -->
-<!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>

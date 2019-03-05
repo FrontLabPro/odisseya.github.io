@@ -32,28 +32,17 @@
 		<link rel="preload" href="js/jquery-1.12.0.min.js" as="script">
     <link rel="preload" href="js/ui/jquery-ui.min.js" as="script">
 
-		<!-- Styles -->
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='fnt/font.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='css/bootstrap.min.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='js/ui/jquery-ui.min.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='css/jquery.fancybox.min.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='css/slick.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='css/animate.3.5.2.css' media='all' />
-		<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" href='css/style.css' media='all' />
-		
-		<noscript>
-			<link rel="stylesheet" type="text/css" href="fnt/font.css" >
-			<link rel="stylesheet" type="text/css" href="css/style.css">
-			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-			<link rel="stylesheet" type="text/css" href="js/ui/jquery-ui.min.css">
-			<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
-			<link rel="stylesheet" type="text/css" href="css/slick.css">
-			<link rel="stylesheet" type="text/css" href="css/animate.3.5.2.css">
-		</noscript>
+		<!-- Styles: Предзагрузка #3 -->
+		<link rel='preload' as='style' href='fnt/font.css' media='all' />
+		<link rel='preload' as='style' href='css/bootstrap.min.css' media='all' />
+		<link rel='preload' as='style' href='css/style.css' media='all' />
+		<link rel='preload' as='style' href='js/ui/jquery-ui.min.css' media='all' />
+		<link rel='preload' as='style' href='css/jquery.fancybox.min.css' media='all' />
+		<link rel='preload' as='style' href='css/slick.css' media='all' />
+		<link rel='preload' as='style' href='css/animate.3.5.2.css' media='all' />
 
 		<meta name="google-site-verification" content="c1flAnnPgXfyohL49PoCElsMwQcuQNqn3dWdZ3DX2V8" />
 		<meta name="yandex-verification" content="dd405e7bfbdb086e" />
-
 	</head>
 	<body>
 		<div id="site">
@@ -957,7 +946,7 @@
 															<img data-src="img/box_ico.png" class="lazy" alt="Лучшая цена">
 														</div>
 														<div class="">
-															<div class="title__item">г. Одинцово <img data-src="img/best_price.png" alt="Лучшая цена"></div>
+															<div class="title__item">г. Одинцово <img class="lazy" data-src="img/best_price.png" alt="Лучшая цена"></div>
 															<div class="content__item"><a href="./hraneniye-veshchey-odintsovo.html">Красногорское ш., 5-й км</a></div>
 														</div>
 													</div>
@@ -2260,6 +2249,16 @@
 
 	<noscript><div><img src="https://mc.yandex.ru/watch/51954575" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
+
+
+	<!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="fnt/font.css" >
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="js/ui/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.3.5.2.css">
 
 
 	<script src="js/lazyload.js"></script>

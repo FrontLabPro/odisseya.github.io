@@ -1,16 +1,4 @@
 // JavaScript Document
-
-
-[].forEach.call(document.querySelectorAll('img[data-src]'),    function(img) {
-  img.setAttribute('src', img.getAttribute('data-src'));
-  img.onload = function() {
-    img.removeAttribute('data-src');
-  };
-});
-
-
-
-
 jQuery(document).ready(function(e) {
 	jQuery(".main_menu .mob_menu").click(function(){
 		if(jQuery(".main_menu").hasClass("open")){
@@ -346,7 +334,7 @@ jQuery(document).ready(function(e) {
 		return false;
 	});
 	
-	jQuery("img.ll").lazyload();
-	
-	
+	if(jQuery("#site").width()>991){
+		new WOW().init();   
+	}
 });

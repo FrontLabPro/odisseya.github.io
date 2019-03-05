@@ -334,7 +334,7 @@ jQuery(document).ready(function(e) {
 		return false;
 	});
 	
-	jQuery("img.ll").lazyload();
-	
-	
+	if(jQuery("#site").width()>991){
+		new WOW().init();   
+	}
 });

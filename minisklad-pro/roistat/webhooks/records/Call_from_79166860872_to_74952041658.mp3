@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--[if lt IE 9]>
+        <script src="/js/ie8polifill/html5shiv.js?v=445"></script>
+        <script src="/js/ie8polifill/0.respond.src.js?v=445"></script>
+        <script src="/js/ie8polifill/0.respond.matchmedia.addListener.src.js?v=445"></script>
+    <![endif]-->
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" content="ru-ru" />
+        <title>Roistat - Ошибка 404</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content=""/>
+        <meta name="apple-itunes-app" content="app-id=1093768520" />
+                <link rel="stylesheet" type="text/css" href="/utils/bootstrap/css/bootstrap.theme.min.css">
+                        <!-- BEGIN MANDATORY STYLE -->
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/icons/icons.min.css?v=445">
+<link href="/utils/style-framework/css/bootstrap.min.css" rel="stylesheet">
+<link href="/utils/style-framework/css/bootstrap-slider.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/plugins.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/style.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-rs-white.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/buttons.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/input.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/button-rs-standart.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/control-navbar.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-footer.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/ue-button.css?v=445">
+<link href="/utils/style-framework/css/isLoading.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2-bootstrap.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/notify.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSwitcher.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSelect2.css?v=445">
+<!-- END  MANDATORY STYLE -->
+                <style>
+            body {
+                background: #f1f2f3;
+            }
+            .default-message-container {
+                position: relative;
+                overflow-x: hidden;
+                margin-top: 40px;
+                background: #fff;
+                min-height: 430px;
+                margin-left: -15px;
+                margin-right: -15px;
+                box-shadow: 0 1px 1px rgba(27, 42, 48, .15);
+            }
+            .default-message-img {
+                max-width: 550px;
+                max-height: 430px;
+                margin: 0 auto;
+                z-index: 1;
+            }
+            @media (max-width: 767px) {
+                .default-message-img-container {
+                    display: none;
+                }
+            }
+        </style>
+    
+                <style>
+            .error-title {
+                font-size: 64px;
+                line-height: 64px;
+                font-weight: 300;
+                margin-top: 80px;
+                margin-bottom: 40px;
+                z-index: 2;
+            }
+            .error-subtitle {
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: 600 !important;
+                margin-bottom: 5px;
+                z-index: 2;
+            }
+        </style>
+    
+                    <script>window.__sharedData=null;</script>
+            <script>window.__appRoutes=null;</script>
+            </head>
+<body  >
+    
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="main-nav"><section class="navbar-left clearfix"><a class="rs-logo hidden-xs" href="/"><img src="/img/roistat-logo.png"></a><div class="hidden-xxs hidden-sm hidden-md hidden-lg"><a class="text-center" href="/" style="width: 50px; font-size: 16px"><i class="fa fa-home"></i></a></div></section><section class="navbar-right clearfix"></section></nav>        
+    <div id="wrapper"  class="service-container ">
+                                    <div class="container-fluid">
+        <div class="default-message-container clearfix">
+            <div class="col-xs-12 col-sm-6 col-md-offset-1 default-message-text-container">
+                    <h1 class="error-title">Ошибка 404</h1>
+    <h2 class="error-subtitle">Что произошло?</h2>
+            <p class="error-message">Страница, которую вы пытались открыть, не существует. Если вы уверены,что произошла ошибка, например эта ссылка раньше открывалась,пожалуйста, обратитесь в <a href="/support/tickets/new">службу поддержки</a>.</p>
+    <p>
+        <a href="/projects">Список проектов</a><br>
+        <a href="http://roistat.com">Сайт Roistat</a>
+    </p>
+                    <!-- BEGIN MANDATORY STYLE -->
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/icons/icons.min.css?v=445">
+<link href="/utils/style-framework/css/bootstrap.min.css" rel="stylesheet">
+<link href="/utils/style-framework/css/bootstrap-slider.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/plugins.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/style.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-rs-white.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/buttons.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/input.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/button-rs-standart.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/control-navbar.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-footer.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/ue-button.css?v=445">
+<link href="/utils/style-framework/css/isLoading.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2-bootstrap.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/notify.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSwitcher.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSelect2.css?v=445">
+<!-- END  MANDATORY STYLE -->
+                <style>
+            body {
+                background: #f1f2f3;
+            }
+            .default-message-container {
+                position: relative;
+                overflow-x: hidden;
+                margin-top: 40px;
+                background: #fff;
+                min-height: 430px;
+                margin-left: -15px;
+                margin-right: -15px;
+                box-shadow: 0 1px 1px rgba(27, 42, 48, .15);
+            }
+            .default-message-img {
+                max-width: 550px;
+                max-height: 430px;
+                margin: 0 auto;
+                z-index: 1;
+            }
+            @media (max-width: 767px) {
+                .default-message-img-container {
+                    display: none;
+                }
+            }
+        </style>
+    
+                <style>
+            .error-title {
+                font-size: 64px;
+                line-height: 64px;
+                font-weight: 300;
+                margin-top: 80px;
+                margin-bottom: 40px;
+                z-index: 2;
+            }
+            .error-subtitle {
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: 600 !important;
+                margin-bottom: 5px;
+                z-index: 2;
+            }
+        </style>
+                </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 default-message-img-container">
+                <img class="default-message-img" src="/img/roistat-penguin.png">
+            </div>
+        </div>
+    </div>
+                    <!-- BEGIN MANDATORY STYLE -->
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/icons/icons.min.css?v=445">
+<link href="/utils/style-framework/css/bootstrap.min.css" rel="stylesheet">
+<link href="/utils/style-framework/css/bootstrap-slider.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/plugins.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/style.min.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-rs-white.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/buttons.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/input.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/button-rs-standart.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/control-navbar.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/navbar-footer.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/ue-button.css?v=445">
+<link href="/utils/style-framework/css/isLoading.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.css" rel="stylesheet">
+<link href="/utils/style-framework/css/perfect-scrollbar.custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/select2/select2-bootstrap.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/notify.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSwitcher.css?v=445">
+<link rel="stylesheet" type="text/css" href="/utils/style-framework/css/rsSelect2.css?v=445">
+<!-- END  MANDATORY STYLE -->
+                <style>
+            body {
+                background: #f1f2f3;
+            }
+            .default-message-container {
+                position: relative;
+                overflow-x: hidden;
+                margin-top: 40px;
+                background: #fff;
+                min-height: 430px;
+                margin-left: -15px;
+                margin-right: -15px;
+                box-shadow: 0 1px 1px rgba(27, 42, 48, .15);
+            }
+            .default-message-img {
+                max-width: 550px;
+                max-height: 430px;
+                margin: 0 auto;
+                z-index: 1;
+            }
+            @media (max-width: 767px) {
+                .default-message-img-container {
+                    display: none;
+                }
+            }
+        </style>
+    
+                <style>
+            .error-title {
+                font-size: 64px;
+                line-height: 64px;
+                font-weight: 300;
+                margin-top: 80px;
+                margin-bottom: 40px;
+                z-index: 2;
+            }
+            .error-subtitle {
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: 600 !important;
+                margin-bottom: 5px;
+                z-index: 2;
+            }
+        </style>
+                </div>
+
+    
+    
+    <script src="/js/jquery/jquery.min.js"></script>
+    <script src="/utils/style-framework/js/jquery.cookie.js"></script>
+    <script src="/js/application.js?v=445"></script>
+    <script src="?v=445"></script>
+    <script src="/utils/localization.js?v=445"></script>
+    
+    <div class="hidden js-templates">
+            </div>
+    
+                <script type="text/javascript">
+window.urlList = [];
+window.pageData = [];</script>
+    
+    <!-- BEGIN MANDATORY SCRIPTS -->
+<script src="/utils/style-framework/js/jquery-migrate-1.2.1.js"></script>
+<script src="/utils/style-framework/js/jquery-ui-1.10.4.min.js"></script>
+<script src="/utils/style-framework/js/bootstrap.min.js"></script>
+<script src="/utils/style-framework/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="/utils/style-framework/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/utils/style-framework/js/jquery.mmenu.min.all.js"></script>
+<script src="/utils/style-framework/js/nprogress.js"></script>
+<script src="/utils/style-framework/js/sparkline.min.js"></script>
+<script src="/utils/style-framework/js/breakpoints.js"></script>
+<script src="/utils/style-framework/js/jquery-numerator.js"></script>
+<script src="/utils/style-framework/js/bootstrap-switch.js"></script>
+<script src="/utils/style-framework/js/jQAllRangeSliders-min.js"></script>
+<script src="/utils/style-framework/js/bootstrap-slider.js"></script>
+<script src="/utils/style-framework/js/jquery.isLoading.min.js"></script>
+<script src="/utils/style-framework/js/perfect-scrollbar.jquery.js"></script>
+<script src="/utils/style-framework/js/moment-with-locales.js?v=445"></script>
+<script src="/utils/style-framework/js/moment-timezone.min.js?v=445"></script>
+
+<script src="/utils/style-framework/js/rsSwitcher.js?v=445"></script>
+<script src="/utils/style-framework/js/localStorage.js?v=445"></script>
+<script src="/utils/select2/select2.min.js?v=445"></script>
+<script src="/js/device/device.min.js?v=445"></script>
+<script>
+    $(function () {
+        $('.js-scrolly-menu').perfectScrollbar({
+            scrollYMarginOffset: 10
+        });
+    });
+</script>
+<!-- END MANDATORY SCRIPTS -->
+<script src="/utils/style-framework/js/application.js?1"></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
+                                </body>
+</html>

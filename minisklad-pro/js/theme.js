@@ -89,7 +89,7 @@ jQuery(document).ready(function(e) {
 		jQuery(this).parents(".img_bl").find(".img_big li").eq(ind).addClass("vis");
 	});
 	
-	jQuery(".gallery_slider").slick({
+/*	jQuery(".gallery_slider").slick({
 		arrows:true,
 		prevArrow:'<a class="slick-prev"><span></span></a>',
 		nextArrow:'<a class="slick-next"><span></span></a>',
@@ -119,7 +119,7 @@ jQuery(document).ready(function(e) {
 			  	}
 			}
 		]
-	});
+	});*/
 	
 	jQuery("[data-fancybox]").fancybox({
 		buttons:[
@@ -134,7 +134,7 @@ jQuery(document).ready(function(e) {
 		jQuery(".cons_parallax").parallax();
 	}
 	
-	jQuery(".comment_slider").slick({
+	/*jQuery(".comment_slider").slick({
 		arrows:true,
 		prevArrow:'<a class="slick-prev"><span></span></a>',
 		nextArrow:'<a class="slick-next"><span></span></a>',
@@ -185,8 +185,8 @@ jQuery(document).ready(function(e) {
 	jQuery(".faq_slider").on('beforeChange', function(event, slick, currentSlide, nextSlide){
   		jQuery(".faq_wrap .quest_list .act").removeClass("act");
 		jQuery(".faq_wrap .quest_list>li").eq(nextSlide).addClass("act");
-	});
-	jQuery(".faq_wrap .quest_list a").click(function(e) {
+	});*/
+	/*jQuery(".faq_wrap .quest_list a").click(function(e) {
         var ind = jQuery(this).parent().index();
 		jQuery(".faq_wrap .quest_list .act").removeClass("act");
 		jQuery(this).parent().addClass("act");
@@ -195,7 +195,7 @@ jQuery(document).ready(function(e) {
 			jQuery("body, html").animate({"scrollTop":jQuery(".answer_bl").offset().top-70},500);	
 		}
 		return false;
-    });
+    });*/
 	
 	jQuery(".scroll_to").click(function(e) {
         var obj = jQuery(this).attr("href");

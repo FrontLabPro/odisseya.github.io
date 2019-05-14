@@ -128,11 +128,11 @@ jQuery(document).ready(function(e) {
 		loop:true
 	});
 	
-	if(jQuery("#site").width()>991){
+	/*if(jQuery("#site").width()>991){
 		jQuery(".pickup_parallax").parallax();
 		jQuery(".save_parallax").parallax();
 		jQuery(".cons_parallax").parallax();
-	}
+	}*/
 	
 	/*jQuery(".comment_slider").slick({
 		arrows:true,

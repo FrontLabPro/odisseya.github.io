@@ -133,66 +133,9 @@ jQuery(document).ready(function(e) {
     });
 	jQuery("input[type='text'],input[type='email'],input[type='tel'],input[type='password'], textarea").focusout(function(e) {
        jQuery(this).removeClass("clean"); 
-    });
-	/*jQuery("input[type='tel']").inputmask({
-		alias: "phonemy",
-    });*/
-        
-	/*jQuery("#popup_call_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#popup_prop_form").validate({
-		rules: {
-			name: "required",
-			tel: "required",
-			text: "required",
-		}
-	});
-	jQuery("#popup_order_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#top_order_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#cons_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#calc_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#smaller_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#quest_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery("#one_click_form").validate({
-		rules: {
-			tel: "required",
-		}
-	});
-	jQuery(".popup_view form").each(function(index, element) {
-        jQuery(this).validate({
-			rules: {
-				tel: "required",
-			}
-		});
-    });*/
-	
+  });
+
+	// part of code moved to «theme--form-validation.js»
 	
 	function form_send(form) {
 		if(form.find("[name='some']").val() == "" && form.find("[name='text1']").val() == "" && form.find("[name='text2']").val() == ""){
@@ -232,8 +175,4 @@ jQuery(document).ready(function(e) {
 		form_send(jQuery(this).parents("form"));
 		return false;
 	});
-	
-	if(jQuery("#site").width()>991){
-		new WOW().init();   
-	}
 });

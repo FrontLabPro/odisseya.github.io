@@ -2316,12 +2316,8 @@
 	<script defer="defer" src="js/jquery-1.12.0.min.js"></script>
 	<script defer="defer" src="js/ui/jquery-ui.min.js"></script>
 	<script defer="defer" src="js/jquery.fancybox.min.js"></script>	
-	<script defer="defer" src="js/wow.min.js"></script>
 	<script defer="defer" src="js/theme.js"></script>
 	<script defer="defer" src="js/calc.js"></script>
-	<script defer="defer" src="js/wow.min.js"></script>
-	
-
 	
 	<script>
 	  //////////////////////////////////
@@ -2345,6 +2341,16 @@
 	  		};
 	  	}
 	  }
+
+
+	  // PRIORITY
+	  // WOW
+	  if (getWindowWidth() >= 991) {
+	  	loadScript('js/wow.min.js', function(){
+	  		new WOW().init(); 
+	  	}, true);
+	  }
+	  // /WOW
 
 
 	  function deferredScripts() {
@@ -2469,75 +2475,17 @@
 	  	deferredFormValidationScriptsLoaded = true;
 	  	// FormValidation
 	  	loadScript('js/jquery.inputmask.bundle.js', function(){
-	  		jQuery("input[type='tel']").inputmask({
-					alias: "phonemy",
-		    });
-	  		loadScript('js/inputmask/phone-my.js', function(){}, true);
-	  	}, true);
-
-	  	loadScript('js/jquery.validate.min.js', function(){
-  			jQuery("#popup_call_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#popup_prop_form").validate({
-  				rules: {
-  					name: "required",
-  					tel: "required",
-  					text: "required",
-  				}
-  			});
-  			jQuery("#popup_order_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#top_order_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#cons_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#calc_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#smaller_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#quest_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery("#one_click_form").validate({
-  				rules: {
-  					tel: "required",
-  				}
-  			});
-  			jQuery(".popup_view form").each(function(index, element) {
-  		        jQuery(this).validate({
-  					rules: {
-  						tel: "required",
-  					}
-  				});
-  		  });
+	  		loadScript('js/inputmask/phone-my.js', function(){
+	  			loadScript('js/jquery.validate.min.js', function(){
+	  				loadScript('js/theme--form-validation.js', function(){}, true);
+	  			}, true);
+	  		}, true);
 	  	}, true);
 	  	// /FormValidation
 	  }
 
-
 	  function thirdPartScripts() {
 	  	thirdPartScriptsLoaded = true;
-
 
 	  	// Load Google Tag Manager (if Mobile viewport)
 	  	if ($isMobile) {
@@ -2749,11 +2697,17 @@
 			thirdPartScripts();
 		}
 		window.removeEventListener('scroll', onPageScrollOnce);
-		document.querySelector('.form').removeEventListener('click', deferredFormValidationScripts);
+		document.querySelector('.form').removeEventListener('mouseenter', onFormMouseenter);
 	}
+
+	function onFormMouseenter(){
+		deferredFormValidationScripts();
+		document.querySelector('.form').removeEventListener('mouseenter', onFormMouseenter);
+	}
+
 	// FLOW
 	window.addEventListener('scroll', onPageScrollOnce);
-	document.querySelector('.form').addEventListener('click', deferredFormValidationScripts);
+	document.querySelector('.form').addEventListener('mouseenter', onFormMouseenter);
 </script>
 
 

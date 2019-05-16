@@ -301,9 +301,9 @@ html, body, #site {height:100%; width:100%; padding:0px; margin:0px; background:
 							.comment_bl .comment_in .author{ font-weight:700;}
 		.sect_map{padding:50px 0px ;}
 			.sect_map .map_wrap{ background:#fff; box-shadow:0px 53px 98px rgba(0,0,0,0.14)}
-				.sect_map .map_wrap .map_bl{float:left; width:720px; height:760px;}
+				.sect_map .map_wrap .map_bl{float:left; width:720px; height:810px;}
 					.sect_map .map_wrap .map_bl #map{width:100%; height:100%; background:#E5E5E5}
-				.sect_map .map_wrap .desc_bl{float:right; width:404px; padding:32px 50px 20px 0px;}
+				.sect_map .map_wrap .desc_bl{float:right; width:404px; padding:0px 50px 20px 0px;}
 					.sect_map .map_wrap .desc_bl .title{font-size:36px; line-height:40px; font-weight:700;}
 					.sect_map .map_wrap .desc_bl .title.text-head-position{display:inline-block;margin-top:20px;line-height:36px;padding:20px 0px 10px 0px;margin-bottom:10px;text-align: center;font-size: 24px;}
 					.sect_map .map_wrap .desc_bl .min__title {margin-bottom: 20px; text-align: center; font-weight: bold;font-size: 20px;}
@@ -503,6 +503,7 @@ html, body, #site {height:100%; width:100%; padding:0px; margin:0px; background:
 		.footer_bot .create{ text-align:right; margin:42px 0px 0px;}
 			.footer_bot .create .t{ display:inline-block; vertical-align:top; margin:0px 10px 0px 0px;}
 			.footer_bot .create img{ display:inline-block; vertical-align:top;}
+	a.pay, a:hover.pay {color:#FFCA00;text-decoration:underline;}
 			
 .popup_bg{position:absolute; top:0px; left:0px; width:100%; background:rgba(0,0,0,0.56); display:none; z-index:9999; opacity:0;}
 .popup_wrapper{position:absolute; top:0px; left:0px; width:100%; margin:0px; padding:0px; list-style:none; z-index:9999;}

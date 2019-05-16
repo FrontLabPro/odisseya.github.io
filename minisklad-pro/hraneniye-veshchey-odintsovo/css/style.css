@@ -447,6 +447,7 @@ html, body, #site {height:100%; width:100%; padding:0px; margin:0px; background:
 		.footer_bot .create{ text-align:right; margin:42px 0px 0px;}
 			.footer_bot .create .t{ display:inline-block; vertical-align:top; margin:0px 10px 0px 0px;}
 			.footer_bot .create img{ display:inline-block; vertical-align:top;}
+	a.pay, a:hover.pay {color:#FFCA00;text-decoration:underline;}
 			
 .popup_bg{position:absolute; top:0px; left:0px; width:100%; background:rgba(0,0,0,0.56); display:none; z-index:9999; opacity:0;}
 .popup_wrapper{position:absolute; top:0px; left:0px; width:100%; margin:0px; padding:0px; list-style:none; z-index:9999;}

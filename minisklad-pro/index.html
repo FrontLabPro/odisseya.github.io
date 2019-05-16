@@ -2315,10 +2315,8 @@
 
 	<script defer="defer" src="js/jquery-1.12.0.min.js"></script>
 	<script defer="defer" src="js/ui/jquery-ui.min.js"></script>
-	<script defer="defer" src="js/jquery.fancybox.min.js"></script>
-	<script defer="defer" src="js/jquery.inputmask.bundle.js"></script>
-	<script defer="defer" src="js/inputmask/phone-my.js"></script>
-	<script defer="defer" src="js/jquery.validate.min.js"></script>
+	<script defer="defer" src="js/jquery.fancybox.min.js"></script>	
+	<script defer="defer" src="js/wow.min.js"></script>
 	<script defer="defer" src="js/theme.js"></script>
 	<script defer="defer" src="js/calc.js"></script>
 	<script defer="defer" src="js/wow.min.js"></script>
@@ -2330,6 +2328,7 @@
 	  // Deferred scripts
 	  //////////////////////////////////
 	  let deferredScriptsLoaded = false;
+	  let deferredFormValidationScriptsLoaded = false;
 	  let thirdPartScriptsLoaded = false;
 
 
@@ -2455,14 +2454,84 @@
 			// /Slick
 			
 			// Parallax
-			if (getWindowWidth() >= (991 + 17)) {
+			if (getWindowWidth() >= 991) {
 				loadScript('js/jquery.parallax.js', function(){
 					jQuery(".pickup_parallax").parallax();
 					jQuery(".save_parallax").parallax();
 					jQuery(".cons_parallax").parallax();
 				}, true);
 			}
-			// /Parallax
+			// /Parallax 
+	  }
+
+
+	  function deferredFormValidationScripts(){
+	  	deferredFormValidationScriptsLoaded = true;
+	  	// FormValidation
+	  	loadScript('js/jquery.inputmask.bundle.js', function(){
+	  		jQuery("input[type='tel']").inputmask({
+					alias: "phonemy",
+		    });
+	  		loadScript('js/inputmask/phone-my.js', function(){}, true);
+	  	}, true);
+
+	  	loadScript('js/jquery.validate.min.js', function(){
+  			jQuery("#popup_call_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#popup_prop_form").validate({
+  				rules: {
+  					name: "required",
+  					tel: "required",
+  					text: "required",
+  				}
+  			});
+  			jQuery("#popup_order_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#top_order_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#cons_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#calc_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#smaller_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#quest_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery("#one_click_form").validate({
+  				rules: {
+  					tel: "required",
+  				}
+  			});
+  			jQuery(".popup_view form").each(function(index, element) {
+  		        jQuery(this).validate({
+  					rules: {
+  						tel: "required",
+  					}
+  				});
+  		  });
+	  	}, true);
+	  	// /FormValidation
 	  }
 
 
@@ -2673,13 +2742,18 @@
 		if (deferredScriptsLoaded === false) {
 			deferredScripts();
 		}
+		if (deferredFormValidationScriptsLoaded === false) {
+			deferredFormValidationScripts();
+		}
 		if (thirdPartScriptsLoaded === false) {
 			thirdPartScripts();
 		}
 		window.removeEventListener('scroll', onPageScrollOnce);
+		document.querySelector('.form').removeEventListener('click', deferredFormValidationScripts);
 	}
 	// FLOW
 	window.addEventListener('scroll', onPageScrollOnce);
+	document.querySelector('.form').addEventListener('click', deferredFormValidationScripts);
 </script>
 
 

@@ -134,11 +134,11 @@ jQuery(document).ready(function(e) {
 	jQuery("input[type='text'],input[type='email'],input[type='tel'],input[type='password'], textarea").focusout(function(e) {
        jQuery(this).removeClass("clean"); 
     });
-	jQuery("input[type='tel']").inputmask({
+	/*jQuery("input[type='tel']").inputmask({
 		alias: "phonemy",
-    });
+    });*/
         
-	jQuery("#popup_call_form").validate({
+	/*jQuery("#popup_call_form").validate({
 		rules: {
 			tel: "required",
 		}
@@ -191,7 +191,7 @@ jQuery(document).ready(function(e) {
 				tel: "required",
 			}
 		});
-    });
+    });*/
 	
 	
 	function form_send(form) {
